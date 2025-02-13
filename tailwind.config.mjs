@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+const config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,12 +7,24 @@ export default {
   ],
   theme: {
     extend: {
-      fontSize: {
-        "icon-sm": "0.875rem", // Custom small icon size
-        "icon-md": "1.25rem", // Custom medium icon size
-        "icon-lg": "2rem", // Custom large icon size
+      colors: {
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        neutral: {
+          white: "var(--neutral-white)",
+          slate: {
+            100: "var(--neutral-slate-100)",
+            300: "var(--neutral-slate-300)",
+            500: "var(--neutral-slate-500)",
+            700: "var(--neutral-slate-700)",
+            800: "var(--neutral-slate-800)",
+            900: "var(--neutral-slate-900)",
+          },
+        },
       },
     },
   },
   plugins: [],
 };
+
+export default config;

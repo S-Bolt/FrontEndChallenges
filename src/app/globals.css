@@ -1,8 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.theme-project1 {
+  --primary: hsl(200, 70%, 52%);
+  --secondary: hsl(150, 69%, 50%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-slate-100: hsl(202, 86%, 94%);
+  --neutral-slate-300: hsl(203, 41%, 72%);
+  --neutral-slate-500: hsl(200, 26%, 54%);
+  --neutral-slate-700: hsl(200, 24%, 40%);
+  --neutral-slate-900: hsl(202, 55%, 16%);
+}
+
+.theme-project2 {
+  --primary: hsl(61, 70%, 52%);
+  --secondary: hsl(4, 69%, 50%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-slate-100: hsl(202, 86%, 94%);
+  --neutral-slate-300: hsl(203, 41%, 72%);
+  --neutral-slate-500: hsl(200, 26%, 54%);
+  --neutral-slate-700: hsl(200, 24%, 40%);
+  --neutral-slate-800: hsl(203, 58%, 10%);
+  --neutral-slate-900: hsl(202, 55%, 16%);
+}
 
 :root {
   --background: #ffffff;
@@ -19,5 +44,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Figtree", "Roboto", Arial, Helvetica, sans-serif;
+  font-family: "Jakarta", "Figtree", "Roboto", Arial, Helvetica, sans-serif;
 }
