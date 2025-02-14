@@ -51,7 +51,8 @@ export default function Calculator() {
     setErrors({ amount: "", term: "", rate: "", type: "" });
   };
 
-  const handleCalculate = () => {
+  const handleCalculate = (e) => {
+    e.preventDefault();
     const { amount, term, rate, type } = mortgageData;
 
     const newErrors = {
@@ -122,6 +123,7 @@ export default function Calculator() {
 
         {/* Results Right Side */}
         <div
+          data-testid="results-container"
           className={
             result.monthlyPayment === 0 || isNaN(result.monthlyPayment)
               ? "flex h-1/3 w-full flex-col items-center justify-center bg-neutral-slate-900 p-2 md:h-full md:w-1/2 md:rounded-bl-[3.5rem] md:rounded-br-3xl md:rounded-tr-3xl md:p-8 lg:p-10"

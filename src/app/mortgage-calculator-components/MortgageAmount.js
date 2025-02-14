@@ -10,10 +10,14 @@ export function MortgageAmount({ onUpdateMortgageAmount, value, error }) {
     <div className="lg:mb-2">
       <h3 className="mb-1 lg:mb-2">Mortgage Amount</h3>
       <div className="group flex items-center">
-        <label className="rounded-l-md border border-r-0 border-neutral-slate-500 bg-neutral-slate-100 px-3 py-1 group-focus-within:border-primary group-focus-within:bg-primary">
+        <label
+          htmlFor="mortgageAmount"
+          className="rounded-l-md border border-r-0 border-neutral-slate-500 bg-neutral-slate-100 px-3 py-1 group-focus-within:border-primary group-focus-within:bg-primary"
+        >
           $
         </label>
         <input
+          id="mortgageAmount"
           type="text"
           value={value}
           onChange={handleChange}

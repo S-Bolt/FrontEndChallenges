@@ -16,15 +16,21 @@ export function MortgageTypes({ onUpdateMortgageType, error }) {
       <h3 className="lg:mb-2">Mortgage Type</h3>
       <div className="flex flex-col md:mb-1">
         <label
-          onClick={() => toggleType("repayment")}
+          htmlFor="repayment"
+          // onClick={() => toggleType("repayment")}
           className={`mb-3 flex h-[2.15rem] w-full cursor-pointer items-center space-x-4 border font-bold ${selectedType === "repayment" ? "border-primary bg-primary" : "border-neutral-slate-500"}`}
         >
           <input
+            data-testid="repayment-radio"
+            id="repayment"
             type="radio"
             name="mortgageType"
             value="repayment"
             checked={selectedType === "repayment"}
-            onChange={handleChange}
+            onChange={(e) => {
+              toggleType("repayment");
+              handleChange(e);
+            }}
             className="ml-4 accent-white"
           ></input>
           <span className="font-family-Jakarta">Repayment</span>
