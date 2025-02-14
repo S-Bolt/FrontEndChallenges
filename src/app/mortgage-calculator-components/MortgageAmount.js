@@ -9,7 +9,7 @@ export function MortgageAmount({ onUpdateMortgageAmount, value, error }) {
       <div className="group flex items-center">
         <label
           htmlFor="mortgageAmount"
-          className="rounded-l-md border border-r-0 border-neutral-slate-500 bg-neutral-slate-100 px-3 py-1 group-focus-within:border-primary group-focus-within:bg-primary"
+          className="rounded-l-md border border-r-0 border-neutral-slate-500 bg-neutral-slate-100 px-3 py-1 group-focus-within:border-primary group-focus-within:bg-primary group-focus:outline-none"
         >
           $
         </label>
