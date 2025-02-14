@@ -62,8 +62,8 @@ export function QRCode() {
         {/* Right Side */}
         <div className="flex flex-col justify-center px-[5rem]">
           <div className="mb-4 flex items-start">
-            <div className="w-1/3">
-              <FontAwesomeIcon icon={faCogs} className="mr-4 text-lg" />
+            <div className="w-1/3 p-6">
+              <FontAwesomeIcon icon={faCogs} className="mr-4 h-full w-full" />
             </div>
             <div className="w-2/3">
               <h2 className="font-bold">Design Systems</h2>
@@ -79,8 +79,11 @@ export function QRCode() {
           <div className="my-6 border-4"></div>
 
           <div className="mb-4 flex items-start">
-            <div className="w-1/3">
-              <FontAwesomeIcon icon={faPalette} className="mr-4 text-lg" />
+            <div className="w-1/3 p-6">
+              <FontAwesomeIcon
+                icon={faPalette}
+                className="mr-4 h-full w-full"
+              />
             </div>
             <div className="w-2/3">
               <h2 className="font-bold">Designs</h2>

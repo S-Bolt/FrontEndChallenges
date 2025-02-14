@@ -7,13 +7,13 @@ export function TermAndRates({
   rateError,
 }) {
   function handleTermChange(e) {
-    const term = parseFloat(e.target.value);
-    onUpdateTerm(term);
+    const term = e.target.value;
+    onUpdateTerm(term === "" ? "" : parseFloat(term));
   }
 
   function handleRateChange(e) {
-    const rate = parseFloat(e.target.value);
-    onUpdateRate(rate);
+    const rate = e.target.value;
+    onUpdateRate(rate === "" ? "" : parseFloat(rate));
   }
 
   return (
