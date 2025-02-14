@@ -1,9 +1,6 @@
 export function MortgageAmount({ onUpdateMortgageAmount, value, error }) {
   function handleChange(e) {
-    const sanitizeAmount = e.target.value.replace(/,/g, "");
-    console.log(sanitizeAmount);
-    const amount = parseFloat(sanitizeAmount) || 0;
-    onUpdateMortgageAmount(amount);
+    onUpdateMortgageAmount(e.target.value);
   }
 
   return (

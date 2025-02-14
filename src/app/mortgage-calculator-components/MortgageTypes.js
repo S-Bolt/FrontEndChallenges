@@ -1,15 +1,9 @@
 import { useState } from "react";
 
-export function MortgageTypes({ onUpdateMortgageType, error }) {
-  const [selectedType, setSelectedType] = useState("");
-
-  function toggleType(type) {
-    setSelectedType(type);
-    onUpdateMortgageType(type);
-  }
-  function handleChange(e) {
+export function MortgageTypes({ selectedType, onUpdateMortgageType, error }) {
+  const handleChange = (e) => {
     onUpdateMortgageType(e.target.value);
-  }
+  };
 
   return (
     <div>
@@ -27,17 +21,13 @@ export function MortgageTypes({ onUpdateMortgageType, error }) {
             name="mortgageType"
             value="repayment"
             checked={selectedType === "repayment"}
-            onChange={(e) => {
-              toggleType("repayment");
-              handleChange(e);
-            }}
+            onChange={handleChange}
             className="ml-4 accent-white"
           ></input>
           <span className="font-family-Jakarta">Repayment</span>
         </label>
 
         <label
-          onClick={() => toggleType("interest-only")}
           className={`mb-1 flex h-[2.15rem] w-full cursor-pointer items-center space-x-4 border font-bold lg:mb-2 ${selectedType === "interest-only" ? "border-primary bg-primary" : "border-neutral-slate-500"}`}
         >
           <input

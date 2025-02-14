@@ -232,7 +232,7 @@ exports[`Home Page Snapshot matches the snapshot 1`] = `
                     class="font-family-Jakarta focus-bg-primary h-[2.15rem] w-full rounded-r-md border border-l-0 border-neutral-slate-500 pl-2 font-bold focus:border-primary focus:outline-none"
                     id="mortgageAmount"
                     type="text"
-                    value="0"
+                    value=""
                   />
                 </div>
                 <div
@@ -255,7 +255,7 @@ exports[`Home Page Snapshot matches the snapshot 1`] = `
                       class="font-family-Jakarta h-[2.15rem] w-full rounded-l-md border border-r-0 border-neutral-slate-500 pl-2 font-bold focus:border-primary focus:outline-none"
                       id="termInput"
                       type="text"
-                      value="0"
+                      value=""
                     />
                     <label
                       class="rounded-r-md border border-l-0 border-neutral-slate-500 bg-neutral-slate-100 px-3 py-1 group-focus-within:border-primary group-focus-within:bg-primary"
@@ -281,7 +281,7 @@ exports[`Home Page Snapshot matches the snapshot 1`] = `
                       class="font-family-Jakarta h-[2.15rem] w-full rounded-l-md border border-r-0 border-neutral-slate-500 pl-2 font-bold focus:border-primary focus:outline-none"
                       id="rateInput"
                       type="text"
-                      value="0"
+                      value=""
                     />
                     <label
                       class="rounded-r-md border border-l-0 border-neutral-slate-500 bg-neutral-slate-100 px-3 py-1 group-focus-within:border-primary group-focus-within:bg-primary"
