@@ -1,4 +1,11 @@
-export function TermAndRates({ onUpdateTerm, onUpdateRate }) {
+export function TermAndRates({
+  onUpdateTerm,
+  onUpdateRate,
+  termValue,
+  rateValue,
+  termError,
+  rateError,
+}) {
   function handleTermChange(e) {
     const term = parseFloat(e.target.value);
     onUpdateTerm(term);
@@ -10,32 +17,40 @@ export function TermAndRates({ onUpdateTerm, onUpdateRate }) {
   }
 
   return (
-    <div className="flex flex-col lg:flex-row lg:space-x-6 mb-4">
+    <div className="flex flex-col lg:mb-2 lg:flex-row lg:space-x-6">
       <div>
-        <h3>Mortgage Term</h3>
-        <div className="flex items-center mb-2 lg:mb-0">
+        <h3 className="lg:mb-2">Mortgage Term</h3>
+        <div className="group flex items-center md:mb-1 lg:mb-0">
           <input
             type="text"
+            value={termValue}
             onChange={handleTermChange}
-            className="w-full h-[2.15rem] border rounded-l-md border-neutral-slate-500 border-r-0 focus:border-primary font-bold font-family-Jakarta pl-2"
+            className="font-family-Jakarta h-[2.15rem] w-full rounded-l-md border border-r-0 border-neutral-slate-500 pl-2 font-bold focus:border-primary focus:outline-none"
           ></input>
-          <span className="px-3 py-1 bg-neutral-slate-100 border rounded-r-md border-neutral-slate-500 border-l-0">
+          <label className="rounded-r-md border border-l-0 border-neutral-slate-500 bg-neutral-slate-100 px-3 py-1 group-focus-within:border-primary group-focus-within:bg-primary">
             Years
-          </span>
+          </label>
+        </div>
+        <div className="mt-1 h-5">
+          {termError && <p className="text-sm text-red-500">{termError}</p>}
         </div>
       </div>
 
       <div>
-        <h3>Interest Rate</h3>
-        <div className="flex items-center ">
+        <h3 className="lg:mb-2">Interest Rate</h3>
+        <div className="group flex items-center">
           <input
             type="text"
+            value={rateValue}
             onChange={handleRateChange}
-            className="w-full h-[2.15rem] border rounded-l-md border-neutral-slate-500 border-r-0 focus:border-primary font-bold font-family-Jakarta pl-2"
+            className="font-family-Jakarta h-[2.15rem] w-full rounded-l-md border border-r-0 border-neutral-slate-500 pl-2 font-bold focus:border-primary focus:outline-none"
           ></input>
-          <span className="px-3 py-1 bg-neutral-slate-100 border rounded-r-md border-neutral-slate-500 border-l-0">
+          <label className="rounded-r-md border border-l-0 border-neutral-slate-500 bg-neutral-slate-100 px-3 py-1 group-focus-within:border-primary group-focus-within:bg-primary">
             %
-          </span>
+          </label>
+        </div>
+        <div className="mt-1 h-5">
+          {rateError && <p className="text-sm text-red-500">{rateError}</p>}
         </div>
       </div>
     </div>

@@ -4,15 +4,15 @@ export function CalculatorButton({ onHandleCalculate }) {
   return (
     <button
       onClick={onHandleCalculate}
-      className="bg-primary w-4/5 h-12 rounded-2xl"
+      className="h-12 w-full rounded-3xl bg-primary lg:w-4/5"
     >
-      <div className="flex justify-center items-center">
+      <div className="flex items-center justify-center">
         <Image
           src="/icon-calculator.svg"
           alt="Calculator Icon"
           width={20}
           height={20}
-          className="mx-2 "
+          className="mx-2"
         />
         <span className="font-bold">Calculate Repayment</span>
       </div>

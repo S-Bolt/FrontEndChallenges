@@ -22,6 +22,9 @@ const config = {
           },
         },
       },
+      boxShadow: {
+        top: "0 -7px 5px -4px var(--primary)",
+      },
     },
   },
   plugins: [],
