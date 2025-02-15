@@ -16,19 +16,19 @@ export function TermAndRates({
 
   return (
     <div className="flex flex-col lg:mb-2 lg:flex-row lg:space-x-6">
-      <div>
+      <div className="w-full">
         <h3 className="lg:mb-2">Mortgage Term</h3>
-        <div className="group flex items-center md:mb-1 lg:mb-0">
+        <div className="group flex items-center">
           <input
             id="termInput"
             type="text"
             value={termValue}
             onChange={handleTermChange}
-            className="font-family-Jakarta h-[2.15rem] w-full rounded-l-md border border-r-0 border-neutral-slate-500 pl-2 font-bold focus:border-primary focus:outline-none"
+            className="font-family-Jakarta h-9 w-full rounded-l-md border border-r-0 border-neutral-slate-500 pl-2 font-bold focus:border-primary focus:outline-none"
           ></input>
           <label
             htmlFor="termInput"
-            className="rounded-r-md border border-l-0 border-neutral-slate-500 bg-neutral-slate-100 px-3 py-1 group-focus-within:border-primary group-focus-within:bg-primary"
+            className="h-9 rounded-r-md border border-l-0 border-neutral-slate-500 bg-neutral-slate-100 px-3 py-1 group-focus-within:border-primary group-focus-within:bg-primary"
           >
             Years
           </label>
@@ -38,7 +38,7 @@ export function TermAndRates({
         </div>
       </div>
 
-      <div>
+      <div className="w-full">
         <h3 className="lg:mb-2">Interest Rate</h3>
         <div className="group flex items-center">
           <input
@@ -46,11 +46,11 @@ export function TermAndRates({
             type="text"
             value={rateValue}
             onChange={handleRateChange}
-            className="font-family-Jakarta h-[2.15rem] w-full rounded-l-md border border-r-0 border-neutral-slate-500 pl-2 font-bold focus:border-primary focus:outline-none"
+            className="font-family-Jakarta h-9 w-full rounded-l-md border border-r-0 border-neutral-slate-500 pl-2 font-bold focus:border-primary focus:outline-none"
           ></input>
           <label
             htmlFor="rateInput"
-            className="rounded-r-md border border-l-0 border-neutral-slate-500 bg-neutral-slate-100 px-3 py-1 group-focus-within:border-primary group-focus-within:bg-primary"
+            className="h-9 rounded-r-md border border-l-0 border-neutral-slate-500 bg-neutral-slate-100 px-3 py-1 group-focus-within:border-primary group-focus-within:bg-primary"
           >
             %
           </label>
