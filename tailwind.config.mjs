@@ -7,6 +7,9 @@ const config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "dm-sans": ['"DM Sans"', "sans-serif"],
+      },
       colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
@@ -21,7 +24,17 @@ const config = {
             900: "var(--neutral-slate-900)",
           },
         },
+        accent: {
+          orange: {
+            light: "var(--accent-orange-light)",
+            dark: "var(--accent-orange-dark)",
+          },
+          purple: {
+            light: "var(--accent-purple-light)",
+          },
+        },
       },
+
       boxShadow: {
         top: "0 -7px 5px -4px var(--primary)",
       },

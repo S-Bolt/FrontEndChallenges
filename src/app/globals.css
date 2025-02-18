@@ -2,6 +2,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,6 +31,36 @@
   --neutral-slate-900: hsl(202, 55%, 16%);
 }
 
+.theme-project3 {
+  --purple-blue-400: #d3a0fa;
+  --purple-blue-500: #c27cf8;
+  --yellow-yellow-500: #ff9f00;
+  --orange-orange-500: #fe8159;
+  --orange-orange-800: #da3701;
+  --neutral-0: #ffffff;
+  --neutral-100: #f2f2f7;
+  --neutral-200: #e4e4ef;
+  --neutral-600: #404254;
+  --neutral-700: #2a2b37;
+  --neutral-800: #21222c;
+  --neutral-900: #12121a;
+
+  /* Map to Tailwind expected variables */
+  --primary: var(--purple-blue-500);
+  --secondary: var(--yellow-yellow-500);
+  --neutral-white: var(--neutral-0);
+  --neutral-slate-100: var(--neutral-100);
+  --neutral-slate-200: var(--neutral-200);
+  --neutral-slate-600: var(--neutral-600);
+  --neutral-slate-700: var(--neutral-700);
+  --neutral-slate-800: var(--neutral-800);
+  --neutral-slate-900: var(--neutral-900);
+
+  --accent-purple-light: var(--purple-blue-400);
+  --accent-orange-light: var(--orange-orange-500);
+  --accent-orange-dark: var(--orange-orange-800);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -44,5 +76,6 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Jakarta", "Figtree", "Roboto", Arial, Helvetica, sans-serif;
+  font-family:
+    "DM Sans", "Jakarta", "Figtree", "Roboto", Arial, Helvetica, sans-serif;
 }
