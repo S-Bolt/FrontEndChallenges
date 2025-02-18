@@ -14,7 +14,10 @@ export default function Home() {
       <Challenge title="Challenge 2" className="theme-project2">
         <Calculator />
       </Challenge>
-      <Challenge title="Challenge 3" className="theme-project3">
+      <Challenge
+        title="🚧Challenge 3🚧 Under Construction🚧"
+        className="theme-project3"
+      >
         <CharacterCount />
       </Challenge>
     </div>
