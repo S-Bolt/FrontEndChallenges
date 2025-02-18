@@ -15,7 +15,7 @@ export default function Home() {
         <Calculator />
       </Challenge>
       <Challenge
-        title="🚧Challenge 3🚧 Under Construction🚧"
+        title="🚧 Challenge 3 🚧 Under Construction 🚧"
         className="theme-project3"
       >
         <CharacterCount />
@@ -33,7 +33,33 @@ function CharacterCount() {
         <Title />
         <Inputs />
         {/* Graphics Display */}
+        <div className="m-4 flex flex-col space-y-4">
+          <InfoBox />
+          <InfoBox />
+          <InfoBox />
+        </div>
+
         {/* Letter Density Display*/}
+      </div>
+    </div>
+  );
+}
+
+function InfoBox({ value, label, imageSrc, altText }) {
+  return (
+    <div className="flex justify-end">
+      <div className="flex flex-1 flex-col justify-center rounded-l-lg bg-primary py-6">
+        <div className="text-dm-sans mx-4 mb-1 text-2xl font-bold">278</div>
+        <div className="text-dm-sans mx-4 text-sm">Total Characters</div>
+      </div>
+      <div className="">
+        <Image
+          src="/character-count/pattern-character-count.svg"
+          alt="pattern-character-count"
+          width={150}
+          height={150}
+          className="rounded-r-lg bg-primary"
+        />
       </div>
     </div>
   );
@@ -85,7 +111,7 @@ function Inputs() {
       </div>
 
       {/* Conditional render for character lenght exceeding limits */}
-      <div className="text-accent-orange-light mx-4 flex text-xs">
+      <div className="mx-4 flex text-xs text-accent-orange-light">
         <Image
           src="/character-count/icon-info.svg"
           alt="sun"
