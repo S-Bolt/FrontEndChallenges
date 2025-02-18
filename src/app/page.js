@@ -32,33 +32,82 @@ function CharacterCount() {
         <Header />
         <Title />
         <Inputs />
-        {/* Graphics Display */}
-        <div className="m-4 flex flex-col space-y-4">
-          <InfoBox />
-          <InfoBox />
-          <InfoBox />
-        </div>
-
-        {/* Letter Density Display*/}
+        <GraphicsDisplay />
+        <LetterDensityDisplay />
       </div>
     </div>
   );
 }
 
-function InfoBox({ value, label, imageSrc, altText }) {
+function LetterDensityDisplay() {
+  const percentage = 16;
+  const scaledPercentage = percentage * 3;
+  return (
+    <div className="m-4">
+      <div className="text-dm-san mb-4 text-lg text-neutral-white">
+        Letter Density
+      </div>
+      <div className="mb-2 flex items-center justify-between space-x-4">
+        <div className="text-dm-san text-sm text-neutral-slate-100">E</div>
+        <div className="h-3 w-full rounded-lg bg-neutral-slate-700">
+          <div
+            style={{ width: `${scaledPercentage}%` }}
+            className="h-3 rounded-lg bg-primary"
+          ></div>
+        </div>
+        <div className="text-dm-san text-sm text-neutral-slate-100">
+          40(16.06%)
+        </div>
+      </div>
+      <div className="text-dm-san my-4 text-neutral-white">See more 🔻</div>
+    </div>
+  );
+}
+
+function GraphicsDisplay() {
+  return (
+    <div className="m-4 flex flex-col space-y-4">
+      <InfoBox
+        value={239}
+        label={"Total Characters"}
+        imageSrc={"/character-count/pattern-character-count.svg"}
+        altText={"pattern-character-count"}
+        bgColor={"bg-primary"}
+      />
+      <InfoBox
+        value={50}
+        label={"Word Count"}
+        imageSrc={"/character-count/pattern-word-count.svg"}
+        altText={"pattern-word-count"}
+        bgColor={"bg-secondary"}
+      />
+      <InfoBox
+        value={39}
+        label={"Total Characters"}
+        imageSrc={"/character-count/pattern-sentence-count.svg"}
+        altText={"pattern-sentence-count"}
+        bgColor={"bg-accent-orange-light"}
+      />
+    </div>
+  );
+}
+
+function InfoBox({ value, label, imageSrc, altText, bgColor }) {
   return (
     <div className="flex justify-end">
-      <div className="flex flex-1 flex-col justify-center rounded-l-lg bg-primary py-6">
-        <div className="text-dm-sans mx-4 mb-1 text-2xl font-bold">278</div>
-        <div className="text-dm-sans mx-4 text-sm">Total Characters</div>
+      <div
+        className={`flex flex-1 flex-col justify-center rounded-l-lg ${bgColor} py-6`}
+      >
+        <div className="text-dm-sans mx-4 mb-1 text-2xl font-bold">{value}</div>
+        <div className="text-dm-sans mx-4 text-sm">{label}</div>
       </div>
       <div className="">
         <Image
-          src="/character-count/pattern-character-count.svg"
-          alt="pattern-character-count"
+          src={imageSrc}
+          alt={altText}
           width={150}
           height={150}
-          className="rounded-r-lg bg-primary"
+          className={`rounded-r-lg ${bgColor}`}
         />
       </div>
     </div>
