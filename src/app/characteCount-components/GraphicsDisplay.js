@@ -20,7 +20,7 @@ export function GraphicsDisplay() {
       />
       <InfoBox
         value={39}
-        label={"Total Characters"}
+        label={"Total Sentences"}
         imageSrc={"/character-count/pattern-sentence-count.svg"}
         altText={"pattern-sentence-count"}
         bgColor={"bg-accent-orange-light"}
