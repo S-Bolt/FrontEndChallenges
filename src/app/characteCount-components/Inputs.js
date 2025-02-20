@@ -5,21 +5,38 @@ import {
   setText,
   toggleCharacterLimitEnabled,
   toggleExcludeSpaces,
+  setCharacterLimit,
 } from "./CharacterCountSlice";
 
 export function Inputs() {
   const dispatch = useDispatch();
   const text = useSelector((state) => state.characterCountStore.text);
+
+  const characterLimit = useSelector(
+    (state) => state.characterCountStore.characterLimit,
+  );
+
   const isCharacterLimitEnabled = useSelector(
     (state) => state.characterCountStore.isCharacterLimitEnabled,
   );
   const isExcludeSpacesEnabled = useSelector(
     (state) => state.characterCountStore.isExcludeSpacesEnabled,
   );
-  const { characterCount } = useSelector((state) => state.characterCountStore);
-  console.log(characterCount);
+  const { characterCount, wordCount } = useSelector(
+    (state) => state.characterCountStore,
+  );
 
-  const limitExceeded = isCharacterLimitEnabled && characterCount >= 300;
+  const limitExceeded =
+    isCharacterLimitEnabled && characterCount >= characterLimit;
+
+  const readingTime = () => {
+    const wpm = 200;
+    return wordCount < wpm ? "< 1m" : `${Math.ceil(wordCount / wpm)}m`;
+  };
+
+  const handleCharacterLimit = (e) => {
+    dispatch(setCharacterLimit(Number(e.target.value)));
+  };
 
   const handleChange = (e) => {
     dispatch(setText(e.target.value));
@@ -39,12 +56,19 @@ export function Inputs() {
       <div className="mx-4">
         <textarea
           maxLength={
-            isCharacterLimitEnabled && characterCount >= 300 ? 300 : undefined
+            isCharacterLimitEnabled && characterCount >= characterLimit
+              ? characterLimit
+              : undefined
           }
           value={text}
           onChange={handleChange}
           placeholder="Type your text here..."
-          className="h-48 w-full rounded-lg bg-neutral-slate-700 p-4 text-sm font-light text-neutral-slate-100 sm:text-base"
+          // I tried to render focus via template literal, but for some reason it was inconsistent...maybe not triggering an update.
+          className={
+            !limitExceeded
+              ? `bg-neutral-slate-200 text-dm-sans dark:text-neutral-slate-200 h-48 w-full rounded-lg p-4 text-sm font-light text-neutral-slate-900 focus:outline-primary sm:text-base dark:bg-neutral-slate-700`
+              : `bg-neutral-slate-200 text-dm-sans dark:text-neutral-slate-200 h-48 w-full rounded-lg p-4 text-sm font-light text-neutral-slate-900 focus:outline-accent-orange-light sm:text-base dark:bg-neutral-slate-700`
+          }
         />
       </div>
 
@@ -56,9 +80,9 @@ export function Inputs() {
             alt="sun"
             width={10}
             height={10}
-            className="mr-2 bg-neutral-slate-900"
+            className="text-dm-sans mr-2 bg-neutral-white dark:bg-neutral-slate-900"
           />
-          Limit reached! Your text exceeded 300 characters.
+          {`Limit reached! Your text exceeded ${characterLimit} characters.`}
         </div>
       )}
 
@@ -74,7 +98,7 @@ export function Inputs() {
             />
             <label
               htmlFor="spacesCheckbox"
-              className="text-sm font-light text-neutral-slate-100"
+              className="text-dm-sans text-sm font-light text-neutral-slate-900 dark:text-neutral-slate-100"
             >
               Exclude Spaces
             </label>
@@ -90,15 +114,25 @@ export function Inputs() {
             />
             <label
               htmlFor="characterLimitsCheckbox"
-              className="text-sm font-light text-neutral-slate-100"
+              className="text-dm-sans text-sm font-light text-neutral-slate-900 dark:text-neutral-slate-100"
             >
               Set Character Limits
             </label>
+            {isCharacterLimitEnabled ? (
+              <input
+                type="text"
+                value={characterLimit}
+                onChange={handleCharacterLimit}
+                className="dark:border-neutral-slate-600 text-dm-sans mx-1 w-10 rounded-md border border-neutral-slate-900 text-center text-sm text-neutral-slate-900 dark:bg-neutral-slate-900 dark:text-neutral-white"
+              />
+            ) : (
+              ""
+            )}
           </div>
         </div>
 
-        <div className="text-sm font-light text-neutral-slate-100">
-          Approx. reading time 1m
+        <div className="text-dm-sans text-sm font-light text-neutral-slate-900 dark:text-neutral-slate-100">
+          Approx. Reading Time: {readingTime()}
         </div>
       </div>
     </>

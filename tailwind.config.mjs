@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -17,8 +18,10 @@ const config = {
           white: "var(--neutral-white)",
           slate: {
             100: "var(--neutral-slate-100)",
+            200: "var(--neutral-slate-200)",
             300: "var(--neutral-slate-300)",
             500: "var(--neutral-slate-500)",
+            600: "var(--neutral-slate-600)",
             700: "var(--neutral-slate-700)",
             800: "var(--neutral-slate-800)",
             900: "var(--neutral-slate-900)",

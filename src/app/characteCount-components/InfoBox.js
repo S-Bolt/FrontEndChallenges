@@ -8,7 +8,7 @@ export function InfoBox({ value, label, imageSrc, altText, bgColor }) {
         className={`flex flex-1 items-center justify-between rounded-lg ${bgColor} overflow-hidden`}
       >
         <div className="">
-          <div className="text-dm-sans mx-4 mb-1 text-2xl font-bold">
+          <div className="text-dm-sans mx-4 mb-1 text-3xl font-bold">
             {value}
           </div>
           <div className="text-dm-sans mx-4 text-sm">{label}</div>
